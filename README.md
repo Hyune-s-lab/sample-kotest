@@ -2,13 +2,11 @@
 
 https://kotest.io/
 
-## SimpleBehaviorSpecTest
+## Behavior Spec [code](https://github.com/Hyune-s-lab/sample-kotest/blob/main/src/test/kotlin/com/hyune/samplekotest/sample/SimpleBehaviorSpecTest.kt)
 
 https://kotest.io/docs/framework/testing-styles.html#behavior-spec
 
-- `Behavior Spec` 으로 만든 샘플 코드
-
-## SimpleApiRequestTest
+## api 호출 [code](https://github.com/Hyune-s-lab/sample-kotest/blob/main/src/test/kotlin/com/hyune/samplekotest/sample/FakeApiRequestTest.kt)
 
 https://jsonplaceholder.typicode.com/
 
