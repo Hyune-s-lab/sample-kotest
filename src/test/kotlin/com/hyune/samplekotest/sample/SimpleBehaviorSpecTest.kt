@@ -1,10 +1,8 @@
 package com.hyune.samplekotest.sample
 
-import io.kotest.core.spec.DisplayName
 import io.kotest.core.spec.style.BehaviorSpec
 import org.springframework.boot.test.context.SpringBootTest
 
-@DisplayName("SimpleBehaviorSpecTest")
 @SpringBootTest
 class SimpleBehaviorSpecTest : BehaviorSpec({
     Given("a broomstick") {
