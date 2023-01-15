@@ -15,7 +15,8 @@ repositories {
     mavenCentral()
 }
 
-val kotestVersion: String = "5.4.2"
+val kotestVersion = "5.5.4"
+val kotestExtVersion = "1.1.2"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
@@ -31,6 +32,7 @@ dependencies {
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
     testImplementation("io.kotest:kotest-property:$kotestVersion")
+    testImplementation("io.kotest.extensions:kotest-extensions-spring:$kotestExtVersion")
 }
 
 tasks.withType<KotlinCompile> {
