@@ -20,3 +20,9 @@ https://jsonplaceholder.typicode.com/
 https://www.baeldung.com/kotlin/measure-elapsed-time
 
 - JUnit 에는 Stopwatch 가 있습니다.
+
+## Logging [code](https://github.com/Hyune-s-lab/sample-kotest/blob/main/src/main/kotlin/com/hyune/samplekotest/service/SampleLoggingService.kt)
+
+```kotlin
+private val log = LoggerFactory.getLogger(javaClass)
+```
