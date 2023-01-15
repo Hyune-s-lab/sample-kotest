@@ -2,6 +2,11 @@
 
 https://kotest.io/
 
+### Environment
+
+- kotest 5.5.4
+- kotest-extensions-spring 1.1.2
+
 ## Behavior Spec [code](https://github.com/Hyune-s-lab/sample-kotest/blob/main/src/test/kotlin/com/hyune/samplekotest/sample/SimpleBehaviorSpecTest.kt)
 
 https://kotest.io/docs/framework/testing-styles.html#behavior-spec
