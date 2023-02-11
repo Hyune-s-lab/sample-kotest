@@ -1,43 +1,32 @@
 package com.hyune.samplekotest.sample
 
-import io.kotest.core.spec.style.BehaviorSpec
+import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldNotBe
 import org.json.JSONArray
 import org.json.JSONTokener
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.web.reactive.function.client.WebClient
+import org.springframework.web.client.RestTemplate
 
-@SpringBootTest
-class FakeApiRequestTest : BehaviorSpec({
-    Given("fake api url 설정") {
-        val client = WebClient.builder()
-            .baseUrl("https://jsonplaceholder.typicode.com")
-            .build()
+class FakeApiRequestTest(restTemplate: RestTemplate = RestTemplate()) : DescribeSpec({
+    describe("fake api - /users 호출") {
+        val then = restTemplate.getForObject(
+            "https://jsonplaceholder.typicode.com/users", String::class.java
+        )
 
-        When("/users 호출") {
-            val responseJson: String? = client.get()
-                .uri("/users")
-                .retrieve()
-                .bodyToMono(String::class.java)
-                .block()
+        it("jsonArray 로 변환 후 확인") {
+            val jsonArray = JSONTokener(then).nextValue() as JSONArray
 
-            Then("jsonArray 로 변환 후 확인") {
-                val jsonArray = JSONTokener(responseJson).nextValue() as JSONArray
+            (0 until jsonArray.length()).forEach { i ->
+                val id = jsonArray.getJSONObject(i).getString("id")
+                id shouldNotBe null
 
-                (0 until jsonArray.length()).forEach { i ->
-                    val id = jsonArray.getJSONObject(i).getString("id")
-                    id shouldNotBe null
+                val name = jsonArray.getJSONObject(i).getString("name")
+                name shouldNotBe null
 
-                    val name = jsonArray.getJSONObject(i).getString("name")
-                    name shouldNotBe null
-
-                    val email = jsonArray.getJSONObject(i).getString("email")
-                    email shouldNotBe null
-                }
-
-                println(jsonArray)
+                val email = jsonArray.getJSONObject(i).getString("email")
+                email shouldNotBe null
             }
+
+            println(jsonArray)
         }
     }
 })
-
