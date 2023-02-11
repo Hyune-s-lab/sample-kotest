@@ -18,8 +18,10 @@ repositories {
 dependencies {
     val kotestVersion = "5.5.4"
     val kotestExtVersion = "1.1.2"
+    val fixtureMonkeyVersion = "0.4.12"
 
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -31,6 +33,9 @@ dependencies {
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
     testImplementation("io.kotest:kotest-property:$kotestVersion")
     testImplementation("io.kotest.extensions:kotest-extensions-spring:$kotestExtVersion")
+
+    implementation("com.google.code.gson:gson")
+    testImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter-kotlin:$fixtureMonkeyVersion")
 }
 
 tasks.withType<KotlinCompile> {
