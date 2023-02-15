@@ -11,6 +11,10 @@ https://kotest.io/
 
 https://kotest.io/docs/framework/testing-styles.html#behavior-spec
 
+## Describe Spec [code](https://github.com/Hyune-s-lab/sample-kotest/blob/main/src/test/kotlin/com/hyune/samplekotest/sample/SimpleBehaviorSpecTest.kt)
+
+https://kotest.io/docs/framework/testing-styles.html#describe-spec
+
 ## api 호출 [code](https://github.com/Hyune-s-lab/sample-kotest/blob/main/src/test/kotlin/com/hyune/samplekotest/sample/FakeApiRequestTest.kt)
 
 https://jsonplaceholder.typicode.com/
